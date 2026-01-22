@@ -1,0 +1,18 @@
+
+# ==== Defense robustness evaluation (glue) ====
+from defense_eval import evaluate_defenses
+
+print("\n[Defense Evaluation] Training defense models on G_adv …")
+defense_results = evaluate_defenses(
+    G_adv,
+    G_adv.ndata['feat'],
+    labs,
+    tr_adv, va_adv, te_adv,
+    dataset="grb-cora",
+    model_names=("gnnguardor","robustgcn","egnnguard"),
+    hidden=128, layers=3, dropout=0.5,
+    use_ln=0, ln_first=False, homo_threshold=0.1,
+    device=device, epochs=500, lr=0.01, wd=0.0, patience=50
+)
+print("Defense summary:", {k: f"{v*100:.2f}%" for k, v in defense_results.items()})
+# ==============================================
