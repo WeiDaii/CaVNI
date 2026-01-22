@@ -6,8 +6,8 @@ import torch, torch.nn as nn, torch.nn.functional as F
 import dgl
 import dgl.nn as dglnn
 from utils import accuracy
-from DGL_models import dgl_gat, dgl_gcn, dgl_sage, dgl_appnp, dgl_gin, dgl_sgc, dgl_hang,dgl_evennet,dgl_simpgcn,dgl_jaccard_gcn
-#from GEN_utils  import load_data_citation, random_splits
+from DGL_models import dgl_gat, dgl_gcn, dgl_sage, dgl_appnp, dgl_gin, dgl_sgc, dgl_hang,dgl_evennet,dgl_simpgcn
+# from GEN_utils  import load_data_citation, random_splits
 from dgl.nn.pytorch.conv import GATConv, GraphConv, GINConv, APPNPConv, SAGEConv, SGConv
 
 class dgl_gcn(nn.Module):
@@ -137,34 +137,34 @@ class Victim:
             self.model = dgl_sgc(input_dim=in_dim, hidden=a.hidden, classes=n_classes).to(device)
         if model_name.lower() == 'simpgcn':
             self.model = dgl_simpgcn(input_dim=in_dim, hidden=a.hidden, classes=n_classes).to(device)
-        if model_name.lower() == 'jaccard_gcn':
-            self.model = dgl_jaccard_gcn(input_dim=in_dim, hidden=a.hidden, classes=n_classes).to(device)
-        if model_name.lower() == 'hang':
-            self.model = dgl_hang(input_dim=in_dim,
-                hidden=a.hidden,              # = --hidden_dim
-                classes=n_classes,
-                time=3.0,                  # = --time
-                step_size=1.0,        # = --step_size
-                add_source=True,      # = --add_source
-                input_dropout=0.4,# = --input_dropout
-                dropout=0.0,            # = --dropout
-                batch_norm=True,      # = --batch_norm
-                energy_hidden=None,
-                activation='tanh',            # 贴近 vanilla HANG
-                p_init='copy',                # p0 = q0（源码常用）
-                share_block=True              # 等价于 --block constant（参数跨步共享）
-    ).to(device)
-        if model_name.lower() == 'evennet':
-            self.model = dgl_evennet(
-                input_dim=in_dim,
-                hidden=a.hidden,  # --hidden
-                classes=n_classes,
-                K=10,  # --K  (默认 10)
-                input_dropout=0.4,
-                dropout=0.0,
-                bn=False,
-                mlp_layers=1
-            ).to(device)
+    #     if model_name.lower() == 'jaccard_gcn':
+    #         self.model = dgl_jaccard_gcn(input_dim=in_dim, hidden=a.hidden, classes=n_classes).to(device)
+    #     if model_name.lower() == 'hang':
+    #         self.model = dgl_hang(input_dim=in_dim,
+    #             hidden=a.hidden,              # = --hidden_dim
+    #             classes=n_classes,
+    #             time=3.0,                  # = --time
+    #             step_size=1.0,        # = --step_size
+    #             add_source=True,      # = --add_source
+    #             input_dropout=0.4,# = --input_dropout
+    #             dropout=0.0,            # = --dropout
+    #             batch_norm=True,      # = --batch_norm
+    #             energy_hidden=None,
+    #             activation='tanh',            # 贴近 vanilla HANG
+    #             p_init='copy',                # p0 = q0（源码常用）
+    #             share_block=True              # 等价于 --block constant（参数跨步共享）
+    # ).to(device)
+    #     if model_name.lower() == 'evennet':
+    #         self.model = dgl_evennet(
+    #             input_dim=in_dim,
+    #             hidden=a.hidden,  # --hidden
+    #             classes=n_classes,
+    #             K=10,  # --K  (默认 10)
+    #             input_dropout=0.4,
+    #             dropout=0.0,
+    #             bn=False,
+    #             mlp_layers=1
+    #         ).to(device)
         self.lr, self.wd = lr, wd
         if self.model is None:
             raise RuntimeError("Victim.model was not constructed — check model_name and branches.")
