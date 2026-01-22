@@ -3,7 +3,7 @@
 This repository provides the implementation of **CaVNI**, a new framework for sparse node injection against black-box GNNs.  
 CaVNI focuses on (i) vulnerable subgraph generation, (ii) sparse injection under strict budgets, and (iii) gradient-free refinement (NES-style) with limited black-box queries.
 
-<p align="center"> <img src="fig/CaVNI.png" /> <p align="center"><em>Fig. 1. A systematic framework of GANI and corresponding evaluations. The red marks indicate the corresponding generated fake node including both features and neighbors. The colors of nodes represent the classes, and the cloud-shaped circle means a wrong classification of the node.</em></p>
+<p align="center"> <img src="fig/CaVNI.png" /> <p align="center"><em>Fig. 3: Overall framework of CaVNI. The framework consists of three modules: vulnerable subgraph generation, edge sampling and injection, and sparse optimization. In particular, steps (1)–(5) in the sparse optimization module depict the iterative workflow of each optimization cycle.</em></p>
 
 ## Highlights
 - **Black-box setting**: only queryable forward outputs are required.
