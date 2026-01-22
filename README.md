@@ -32,8 +32,9 @@ This repository provides the implementation of **CaVNI**, a new framework for sp
 ## Run the demo
 
   ```
-  python -u run_CaVNI.py   --dataset cora --victim gcn --gpu 0   --steps 40 --bb_queries 24  --nes_hard_topk --nes_edge_budget 8  --lam_class 1.2 --lam_l1  0.001
+  python -u run_CaVNI.py   --dataset cora --victim gcn --gpu 0   --steps 40 --bb_queries 24  --nes_hard_topk --nes_edge_budget 8  --lam_class 1.2 --lam_l1  0.001 --inj_node_budget 0.01 --seed 0 --khop_edge 2 --use_pseudo
   ```
+---
 ## Run the ablation file
   ```
   bash ablation_grid_by_ds.sh
