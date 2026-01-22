@@ -7,7 +7,7 @@ import dgl
 import dgl.nn as dglnn
 from utils import accuracy
 from DGL_models import dgl_gat, dgl_gcn, dgl_sage, dgl_appnp, dgl_gin, dgl_sgc, dgl_hang,dgl_evennet,dgl_simpgcn,dgl_jaccard_gcn
-from GEN_utils  import load_data_citation, random_splits
+#from GEN_utils  import load_data_citation, random_splits
 from dgl.nn.pytorch.conv import GATConv, GraphConv, GINConv, APPNPConv, SAGEConv, SGConv
 
 class dgl_gcn(nn.Module):
