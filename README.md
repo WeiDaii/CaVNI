@@ -1,7 +1,6 @@
 # CaVNI: Causal Vulnerability-Aware Sparse Node Injection Attacks against Black-Box Graph Neural Networks
 
-This repository provides the implementation of **CaVNI**, a new framework for sparse node injection against black-box GNNs.  
-CaVNI focuses on (i) Vulnerable Subgraph Generation Module, (ii) Edge Sampling and Injection Module, and (iii) Sparse Optimization Module.
+This repository provides the implementation of **CaVNI**, a new framework for sparse node injection against black-box GNNs. CaVNI focuses on (i) Vulnerable Subgraph Generation Module, (ii) Edge Sampling and Injection Module, and (iii) Sparse Optimization Module.
 
 <p align="center"> <img src="fig/CaVNI.jpg" /> <p align="center"><em>Fig. 3: Overall framework of CaVNI. The framework consists of three modules: vulnerable subgraph generation, edge sampling and injection, and sparse optimization. In particular, steps (1)–(5) in the sparse optimization module depict the iterative workflow of each optimization cycle.</em></p>
 
