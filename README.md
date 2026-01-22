@@ -3,7 +3,7 @@
 This repository provides the implementation of **CaVNI**, a new framework for sparse node injection against black-box GNNs.  
 CaVNI focuses on (i) Vulnerable Subgraph Generation Module, (ii) Edge Sampling and Injection Module, and (iii) Sparse Optimization Module.
 
-<p align="center"> <img src="fig/CaVNI.jgp" /> <p align="center"><em>Fig. 3: Overall framework of CaVNI. The framework consists of three modules: vulnerable subgraph generation, edge sampling and injection, and sparse optimization. In particular, steps (1)–(5) in the sparse optimization module depict the iterative workflow of each optimization cycle.</em></p>
+<p align="center"> <img src="fig/CaVNI.jpg" /> <p align="center"><em>Fig. 3: Overall framework of CaVNI. The framework consists of three modules: vulnerable subgraph generation, edge sampling and injection, and sparse optimization. In particular, steps (1)–(5) in the sparse optimization module depict the iterative workflow of each optimization cycle.</em></p>
 
 ## Highlights
 - **Black-box setting**: only queryable forward outputs are required.
@@ -11,6 +11,8 @@ CaVNI focuses on (i) Vulnerable Subgraph Generation Module, (ii) Edge Sampling a
 - **Sparse injection under strict budgets**: Given anchor-centered subgraphs, sparse connections for each injected node are determined under a per-node degree budget
 - **Sparse optimization**: jointly refines injected edges/features with **NES** under strict budgets.
 - **Strict-budget landing**: discretized/Top-k landing ensures the final injected structure obeys the given edge budget.
+
+<p align="center"> <img src="fig/NES.jpg" /> <p align="center"><em>Fig. 4: This figure illustrates the attack region from a local-subgraph perspective. It then constructs counterfactual local subgraphs by adding candidate edges between injected nodes and selected candidates. Finally, guided by the optimized hyperparameters, the procedure iteratively adds or removes edges to refine the local structure in a sparse and effective manner.</em></p>
 
 ---
 
