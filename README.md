@@ -14,6 +14,11 @@ This repository provides the implementation of **CaVNI**, a new framework for sp
 <p align="center"> <img src="fig/NES.jpg" /> <p align="center"><em>Fig. 4: This figure illustrates the attack region from a local-subgraph perspective. It then constructs counterfactual local subgraphs by adding candidate edges between injected nodes and selected candidates. Finally, guided by the optimized hyperparameters, the procedure iteratively adds or removes edges to refine the local structure in a sparse and effective manner.</em></p>
 
 ---
+## Declaration
+
+  The paper is still in the submission stage and will provide a relatively complete code once accepted.
+
+---
 
 ## Requirements
 
